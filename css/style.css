@@ -1,9 +1,6 @@
 body {
   padding: 2rem 0 0 2rem;
-}
-
-.bg {
-  background-color: white;
+  background-color: rgb(70, 0, 77);
 }
 
 #quote-box {
@@ -11,13 +8,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: 50px;
   padding: 20px;
-  border: 1px solid black;  
+  min-height: 500px;
+  transition: background-color 0.5s ease;
+  color: aliceblue;
   }
 
 #text {
   font-size: 4rem;
+  margin-bottom: 100px;
 }
 
 #author {
@@ -26,6 +26,8 @@ body {
 }
 
 #buttons {
+  display: flex;
+  justify-content: space-around;
   position: sticky;
   padding: 4vw;
   margin: 4vw;

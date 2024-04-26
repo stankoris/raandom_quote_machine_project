@@ -13,7 +13,7 @@ function go() {
 
 
 function genRandQuote() {
-  var quotes = [{
+  const quotes = [{
 		id: 1,
 		text: "I have just three things to teach: simplicity, patience, compassion. These three are your greatest treasures.",
 		source: "Lao Tzu"
@@ -364,18 +364,23 @@ function genRandQuote() {
 		source: "Mae West"
 	},
 ];
-  var randQuote = quotes[Math.floor(Math.random() * (quotes.length))];
+
+
+  const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+  const randQuote = quotes[Math.floor(Math.random() * (quotes.length))];
+
   $("#text").html(randQuote.text);
   $("#author").html(randQuote.source);
   $("#tweet-quote").attr("href", stringToClickToTweetURL('"' + randQuote.text + '" - ' + randQuote.source));
+  $("#quote-box").css("background-color", randomColor);
 }
 
 
 function stringToClickToTweetURL(str) {
 
-  var stringToConvert = str.split(" ").join("%20").split("@").join("%40").split("!").join("%21");
+  const stringToConvert = str.split(" ").join("%20").split("@").join("%40").split("!").join("%21");
 
-  var resultString = "https://twitter.com/intent/tweet?text=" + stringToConvert;
+  const resultString = "https://twitter.com/intent/tweet?text=" + stringToConvert;
 
   return resultString;
 }
